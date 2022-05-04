@@ -1,0 +1,21 @@
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Titular</th>
+            <th scope="col">N° de Tarjeta</th>
+            <th scope="col">Fecha expiración</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let card of cardSvc.list">
+            <td>{{ card.holder }}</td>
+            <td id="cardNumber">{{ card.cardNumber }}</td>
+            <td>{{ card.expirationDate }}</td>
+            <td>
+                <i class="far fa-edit fa-lg text-info me-4" (click)="edit(card)" style="cursor: pointer;"></i>
+                <i class="far fa-trash-alt fa-lg text-danger" (click)="deleteCard(card.id!)" style="cursor: pointer;"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
